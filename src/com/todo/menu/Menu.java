@@ -10,6 +10,7 @@ public class Menu {
         System.out.println("edit - 항목을 수정합니다.");
         System.out.println("comp - 항목을 완료 처리합니다.");
         System.out.println("uncomp - 항목을 미완료 처리합니다.");
+        System.out.println("del_date - 이미 목표 날짜가 지난 항목들을 보이고 삭제할지 선택합니다.");
         System.out.println("percent - 항목의 진행도를 퍼센트로 입력합니다.");
         System.out.println("prior - 항목의 중요도를 설정합니다.");
         System.out.println("find - 키워드를 입력하면 제목과 내용 중 해당 키워드를 포함하고 있는 항목들이 출력됩니다.");

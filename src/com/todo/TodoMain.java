@@ -15,8 +15,7 @@ public class TodoMain {
 		//l.importData("todolist.txt");
 		boolean isList = false;
 		boolean quit = false;
-		
-		//TodoUtil.loadList(l, "todolist.txt");
+
 		Menu.displaymenu();
 		do {
 			Menu.prompt();
@@ -34,6 +33,10 @@ public class TodoMain {
 			
 			case "del":
 				TodoUtil.deleteItem(l);
+				break;
+				
+			case "del_date":
+				TodoUtil.deleteByDate(l);
 				break;
 				
 			case "edit":
@@ -56,13 +59,11 @@ public class TodoMain {
 				break;
 				
 			case "comp":
-				int num = sc.nextInt();
-				TodoUtil.completeItem(l, num);
+				TodoUtil.completeItem(l);
 				break;
 				
 			case "uncomp":
-				int num1 = sc.nextInt();
-				TodoUtil.uncompleteItem(l, num1);
+				TodoUtil.uncompleteItem(l);
 				break;
 			
 			case "percent":
@@ -121,6 +122,6 @@ public class TodoMain {
 			
 			if(isList) TodoUtil.listAll(l);
 		} while (!quit);
-		TodoUtil.saveList(l, "todolist.txt");
+		System.out.println("프로그램을 종료합니다.");
 	}
 }
