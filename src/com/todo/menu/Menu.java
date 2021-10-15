@@ -15,8 +15,8 @@ public class Menu {
         System.out.println("prior - 항목의 중요도를 설정합니다.");
         System.out.println("find - 키워드를 입력하면 제목과 내용 중 해당 키워드를 포함하고 있는 항목들이 출력됩니다.");
         System.out.println("find_cate - 키워드를 입력하면 카테고리 중 해당 키워드를 포함하고 있는 항목들이 출력됩니다.");
-        System.out.println("find_perc - 숫자를 입력하면 해당 진행도를 가지고 있는 항목들이 출력됩니다.");
         System.out.println("ls - 저장된 모든 항목들을 보입니다.");
+        System.out.println("ls_perc - 가장 많이 진행된 순서대로 항목들을 출력합니다.");
         System.out.println("ls_comp - 완료된 모든 항목들을 출력합니다.");
         System.out.println("ls_prior - 중요한 항목들을 순서대로 출력합니다.");
         System.out.println("ls_cate - 현재 등록되어있는 모든 카테고리들을 중복되지 않게 출력합니다.");

@@ -53,11 +53,6 @@ public class TodoMain {
 				TodoUtil.findCateList(l, s1);
 				break;
 				
-			case "find_perc":
-				int perc = sc.nextInt();
-				TodoUtil.findPerc(l, perc);
-				break;
-				
 			case "comp":
 				TodoUtil.completeItem(l);
 				break;
@@ -77,6 +72,11 @@ public class TodoMain {
 			case "ls_prior":
 				System.out.println("중요도순으로 정렬하였습니다.");
 				TodoUtil.listPriorAll(l);
+				break;
+				
+			case "ls_perc":
+				System.out.println("진행도순으로 정렬하였습니다.");
+				TodoUtil.listPercent(l);
 				break;
 				
 			case "ls_comp":

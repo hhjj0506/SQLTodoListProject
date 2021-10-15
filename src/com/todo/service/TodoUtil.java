@@ -209,15 +209,6 @@ public class TodoUtil {
 		System.out.println("총 " + count + "개의 항목을 찾았습니다.");
 	}
 	
-	public static void findPerc(TodoList l, int perc) {
-		int count = 0;
-		for (TodoItem item : l.getPerc(perc)) {
-			System.out.println(item.toString());
-			count++;
-		}
-		System.out.println("총 " + count + "개의 항목을 찾았습니다.");
-	}
-	
 	public static void listCateAll(TodoList l) {
 		int count = 0;
 		
@@ -232,6 +223,13 @@ public class TodoUtil {
 	public static void listPriorAll(TodoList l) {
 		System.out.printf("[전체 목록, 총 %d개]\n", l.getCount());
 		for (TodoItem item : l.getPrior()) {
+			System.out.println(item.toString());
+		}
+	}
+	
+	public static void listPercent(TodoList l) {
+		System.out.printf("[전체 목록, 총 %d개]\n", l.getCount());
+		for (TodoItem item : l.getPercent()) {
 			System.out.println(item.toString());
 		}
 	}

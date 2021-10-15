@@ -200,7 +200,7 @@ public class TodoList {
 	public ArrayList<TodoItem> getList(String word) {
 		ArrayList<TodoItem> list = new ArrayList<TodoItem>();
 		PreparedStatement pstmt;
-		word = "%d"+word+"%d";
+		word = "%"+word+"%";
 		try {
 			String sql = "SELECT * FROM list WHERE title like ? or memo like ?";
 			pstmt = conn.prepareStatement(sql);
@@ -269,6 +269,37 @@ public class TodoList {
 		try {
 			stmt = conn.createStatement();
 			String sql = "SELECT * FROM list ORDER BY priority";
+			ResultSet rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				int id = rs.getInt("id");
+				String category = rs.getString("category");
+				String title = rs.getString("title");
+				String description = rs.getString("memo");
+				String due_date = rs.getString("due_date");
+				String current_date = rs.getString("current_date");
+				int is_completed = rs.getInt("is_completed");
+				int percent = rs.getInt("percent");
+				int priority = rs.getInt("priority");
+				TodoItem t = new TodoItem(title, description, category, due_date, priority);
+				t.setId(id);
+				t.setIs_completed(is_completed);
+				t.setPercent(percent);
+				t.setCurrent_date(current_date);
+				list.add(t);
+			}
+			stmt.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public ArrayList<TodoItem> getPercent() {
+		ArrayList<TodoItem> list = new ArrayList<TodoItem>();
+		Statement stmt;
+		try {
+			stmt = conn.createStatement();
+			String sql = "SELECT * FROM list ORDER BY percent desc";
 			ResultSet rs = stmt.executeQuery(sql);
 			while(rs.next()) {
 				int id = rs.getInt("id");
